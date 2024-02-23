@@ -130,3 +130,5 @@ dist
 .pnp.*
 
 yarn.lock
+package-lock.json
+forge.config.js
