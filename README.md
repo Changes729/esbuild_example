@@ -1,6 +1,6 @@
 # esbuild_example
 
-## China Users
+## Chinese Users
 
 ``` sh
 # install cnpm
