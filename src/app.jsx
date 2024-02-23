@@ -1,5 +1,6 @@
-import * as React from 'react'
-import * as Server from 'react-dom/server'
+import * as ReactDOM from 'react-dom';
+import * as React from "react";
 
-let Greet = () => <h1>Hello, world!</h1>
-console.log(Server.renderToString(<Greet />))
+const app = document.getElementById("app");
+const root = ReactDOM.createRoot(app);
+root.render(<h1>Develop. Preview. Ship.</h1>);
