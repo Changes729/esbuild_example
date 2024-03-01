@@ -7,17 +7,16 @@ const STATIC_DIR = "public/static/";
 const OUT_DIR = "dist/";
 
 fs.rmSync(OUT_DIR, { recursive: true, force: true });
-fs.cpSync(HTML_DIR, OUT_DIR, {recursive: true});
-fs.cpSync(JS_DIR, `${OUT_DIR}/js`, {recursive: true});
-fs.cpSync(STATIC_DIR, `${OUT_DIR}/static`, {recursive: true});
+fs.cpSync(HTML_DIR, OUT_DIR, { recursive: true });
+fs.cpSync(JS_DIR, `${OUT_DIR}/js`, { recursive: true });
+fs.cpSync(STATIC_DIR, `${OUT_DIR}/static`, { recursive: true });
 
 let ctx = await esbuild.context({
-  entryPoints: ["src/app.jsx"],
+  entryPoints: ["src/app.jsx", "src/app-kicanvans.jsx", "src/app-pdf.jsx"],
   bundle: true,
   minify: true,
   sourcemap: true,
   loader: { ".htm": "file" },
-  target: ["chrome58", "firefox57", "safari11", "edge16"],
   outdir: `${OUT_DIR}/js`,
 });
 
