@@ -1,6 +1,7 @@
 import * as esbuild from "esbuild";
 import fs from "node:fs";
 
+const APP_DIR = "src/";
 const HTML_DIR = "public/html/";
 const JS_DIR = "public/js/";
 const STATIC_DIR = "public/static/";
@@ -11,8 +12,15 @@ fs.cpSync(HTML_DIR, OUT_DIR, { recursive: true });
 fs.cpSync(JS_DIR, `${OUT_DIR}/js`, { recursive: true });
 fs.cpSync(STATIC_DIR, `${OUT_DIR}/static`, { recursive: true });
 
+var app_list = [];
+fs.readdirSync(APP_DIR).forEach((file) => {
+  if (/^(app).+(.jsx)?(.tsx)?(.js)?(.ts)?$/.test(file)) {
+    app_list.push(APP_DIR + file);
+  }
+});
+
 let ctx = await esbuild.context({
-  entryPoints: ["src/app.jsx", "src/app-kicanvans.jsx", "src/app-pdf.jsx"],
+  entryPoints: app_list,
   bundle: true,
   minify: true,
   sourcemap: true,
