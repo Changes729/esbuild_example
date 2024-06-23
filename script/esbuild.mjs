@@ -24,7 +24,7 @@ let ctx = await esbuild.context({
   bundle: true,
   minify: true,
   sourcemap: true,
-  loader: { ".htm": "file" },
+  loader: { ".htm": "file", ".svg": "text" },
   outdir: `${OUT_DIR}/js`,
 });
 
