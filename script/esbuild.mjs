@@ -26,6 +26,10 @@ let ctx = await esbuild.context({
   sourcemap: true,
   loader: { ".htm": "file", ".svg": "text" },
   outdir: `${OUT_DIR}/js`,
+  define: {
+    "process.env.NODE_ENV": '"production"',
+    "process.env.IS_PREACT": '"true"',
+  },
 });
 
 let { host, port } = await ctx.serve({
