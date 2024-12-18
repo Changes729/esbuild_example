@@ -1,6 +1,8 @@
 import * as esbuild from "esbuild";
 import fs from "node:fs";
+import http from "node:http"
 
+let PORT = 3000;
 const APP_DIR = "src/";
 const HTML_DIR = "public/html/";
 const JS_DIR = "public/js/";
@@ -35,6 +37,45 @@ let ctx = await esbuild.context({
 let { host, port } = await ctx.serve({
   servedir: OUT_DIR,
 });
-await ctx.watch();
 
-console.log(`[serve] listening at http://${host}:${port}`);
+http
+  .createServer((req, res) => {
+    const options = {
+      hostname: host,
+      port: port,
+      path: req.url,
+      method: req.method,
+      headers: req.headers,
+    };
+
+    let proxyReq = http.request(options, (proxyRes) => {
+      if (proxyRes.statusCode != 200) {
+        console.log(
+          `request failed with url ${options.url} code: ${proxyRes.statusCode}`
+        );
+
+        options.path = "";
+        let _req = http.request(options, (anotherRes) => {
+          if (anotherRes.statusCode === 200) {
+            res.writeHead(anotherRes.statusCode, anotherRes.headers);
+            anotherRes.pipe(res, { end: true });
+          } else {
+            console.log(
+              `request failed with url ${options.url} code: ${proxyRes.statusCode}`
+            );
+            res.end();
+          }
+        });
+        req.pipe(_req, { end: true });
+      } /** if code == 200 */ else {
+        res.writeHead(proxyRes.statusCode, proxyRes.headers);
+        proxyRes.pipe(res, { end: true });
+      }
+    });
+
+    req.pipe(proxyReq, { end: true });
+  })
+  .listen(PORT);
+
+await ctx.watch();
+console.log(`[serve] listening at http://${host}:${PORT}`);
