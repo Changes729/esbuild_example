@@ -1,22 +1,25 @@
 import * as esbuild from "esbuild";
 import fs from "node:fs";
 import http from "node:http"
+import { sassPlugin } from "esbuild-sass-plugin";
 
 let PORT = 3000;
 const APP_DIR = "src/";
 const HTML_DIR = "public/html/";
 const JS_DIR = "public/js/";
+const CSS_DIR = "public/css/";
 const STATIC_DIR = "public/static/";
 const OUT_DIR = "dist/";
 
 fs.rmSync(OUT_DIR, { recursive: true, force: true });
 fs.cpSync(HTML_DIR, OUT_DIR, { recursive: true });
-fs.cpSync(JS_DIR, `${OUT_DIR}/js`, { recursive: true });
+fs.cpSync(JS_DIR, `${OUT_DIR}`, { recursive: true });
+fs.cpSync(CSS_DIR, `${OUT_DIR}`, { recursive: true });
 fs.cpSync(STATIC_DIR, `${OUT_DIR}/static`, { recursive: true });
 
 var app_list = [];
 fs.readdirSync(APP_DIR).forEach((file) => {
-  if (/^(app).+(.jsx)?(.tsx)?(.js)?(.ts)?$/.test(file)) {
+  if (/^(app).+(.jsx)?(.tsx)?(.js)?(.ts)?(.scss)?$/.test(file)) {
     app_list.push(APP_DIR + file);
   }
 });
@@ -27,11 +30,12 @@ let ctx = await esbuild.context({
   minify: true,
   sourcemap: true,
   loader: { ".htm": "file", ".svg": "text" },
-  outdir: `${OUT_DIR}/js`,
+  outdir: `${OUT_DIR}`,
   define: {
     "process.env.NODE_ENV": '"production"',
     "process.env.IS_PREACT": '"true"',
   },
+  plugins: [sassPlugin()],
 });
 
 let { host, port } = await ctx.serve({
