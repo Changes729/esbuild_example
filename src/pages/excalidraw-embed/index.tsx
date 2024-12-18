@@ -1,13 +1,4 @@
-import * as ReactDOM from "react-dom";
-import * as React from "react";
-
-const app = document.getElementById("app");
-const root = ReactDOM.createRoot(app);
-
-root.render(
-  <App />
-);
-
+import React from "react";
 import { useEffect, useState, useRef, useCallback } from "react";
 import {
   exportToCanvas,
@@ -35,7 +26,6 @@ import {
   PointerDownState as ExcalidrawPointerDownState
 } from "@excalidraw/excalidraw/types/types";
 
-import "./App.scss";
 import initialData from "./initialData";
 
 import { NonDeletedExcalidrawElement } from "@excalidraw/excalidraw/types/element/types";

@@ -4,7 +4,12 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router";
 
 /** Views for router */
-import Aspect_box from "./pages/aspect-box";
+import { default as AspectBox } from "./pages/aspect-box";
+import { default as BurgerMenu } from "./pages/burger-menu";
+import { default as CssTimeline } from "./pages/css-timeline";
+import { default as ExcalidrawEmbed } from "./pages/excalidraw-embed/index";
+import { default as MarkdownExample } from "./pages/markdown";
+import { default as SvgClick } from "./pages/svg-element-onclick";
 
 /* Private class function ----------------------------------------------------*/
 function Hello() {
@@ -20,7 +25,18 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index element={<Hello />} />
-        <Route path="AspectBox" element={<Aspect_box />} />
+        <Route path="aspect-box" element={<AspectBox />} />
+        <Route path="burger-menu" element={<BurgerMenu />} />
+        <Route path="css-timeline" element={<CssTimeline />} />
+        <Route path="excalidraw-embed" element={<ExcalidrawEmbed />} />
+        <Route path="markdown" element={<MarkdownExample />} />
+        <Route
+          path="pdf-dym"
+          element={
+            <iframe src="/static/Generative Agents- Interactive Simulacra of Human Behavior.pdf"></iframe>
+          }
+        />
+        <Route path="svg-click" element={<SvgClick />} />
       </Routes>
     </BrowserRouter>
   );

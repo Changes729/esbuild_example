@@ -1,13 +1,9 @@
 /** source from: https://www.jonashietala.se/blog/2024/08/25/a_simple_timeline_using_css_flexbox/ */
 
-import * as ReactDOM from "react-dom";
 import * as React from "react";
-import "./styles/css-timeline.scss";
+import "../styles/css-timeline.scss";
 
-
-const app = document.getElementById("app");
-const root = ReactDOM.createRoot(app);
-root.render(
+export default () => {
   <div class="timeline">
     <div class="events">
       {/* <!-- The first `1989` event --> */}
@@ -62,5 +58,5 @@ root.render(
         </div>
       </div>
     </div>
-  </div>
-);
+  </div>;
+};

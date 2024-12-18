@@ -1,9 +1,8 @@
-import * as ReactDOM from "react-dom";
-import * as React from "react";
+import React from "react";
 import { slide as Menu } from "react-burger-menu";
-import "./burger-menu.css"
+import "../styles/burger-menu.scss"
 
-class Example extends React.Component {
+export default class d extends React.Component{
   showSettings (event) {
     event.preventDefault();
   }
@@ -20,9 +19,3 @@ class Example extends React.Component {
     );
   }
 }
-
-const app = document.getElementById("app");
-const root = ReactDOM.createRoot(app);
-root.render(
-  <Example></Example>
-);
