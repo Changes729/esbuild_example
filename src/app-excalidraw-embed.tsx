@@ -35,7 +35,7 @@ import {
   PointerDownState as ExcalidrawPointerDownState
 } from "@excalidraw/excalidraw/types/types";
 
-// import "./App.scss";
+import "./App.scss";
 import initialData from "./initialData";
 
 import { NonDeletedExcalidrawElement } from "@excalidraw/excalidraw/types/element/types";
