@@ -10,6 +10,9 @@ import { default as CssTimeline } from "./pages/css-timeline";
 import { default as ExcalidrawEmbed } from "./pages/excalidraw-embed/index";
 import { default as MarkdownExample } from "./pages/markdown";
 import { default as SvgClick } from "./pages/svg-element-onclick";
+import { default as CssFocus } from "./pages/css-focus";
+import { default as CssShadowsShift } from "./pages/css-color-shadows";
+import { default as HolyGrailLayout } from "./pages/holy-grail-layout";
 
 /* Private class function ----------------------------------------------------*/
 function Hello() {
@@ -28,6 +31,8 @@ function App() {
         <Route path="aspect-box" element={<AspectBox />} />
         <Route path="burger-menu" element={<BurgerMenu />} />
         <Route path="css-timeline" element={<CssTimeline />} />
+        <Route path="css-focus" element={<CssFocus />} />
+        <Route path="css-shadow-shift" element={<CssShadowsShift />} />
         <Route path="excalidraw-embed" element={<ExcalidrawEmbed />} />
         <Route path="markdown" element={<MarkdownExample />} />
         <Route
@@ -37,6 +42,7 @@ function App() {
           }
         />
         <Route path="svg-click" element={<SvgClick />} />
+        <Route path="holy-grail-layout" element={<HolyGrailLayout />} />
       </Routes>
     </BrowserRouter>
   );

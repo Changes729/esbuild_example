@@ -1,0 +1,59 @@
+.wrapper {
+  height: 100%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  margin: 0;
+  color: #5e3254;
+  background-color: #dbe0e4;
+  text-align: center;
+  font: 1.25rem/1 "Rubik", sans-serif;
+  padding: 5px 20px;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  h1 {
+    margin: 0 0 10px;
+    font-size: 2.5rem;
+  }
+
+  p {
+    margin: 0 0 20px;
+    line-height: 1.25;
+  }
+
+  pre {
+    margin: 0;
+    font: 1rem/1.5 "Roboto Mono", monospace;
+  }
+
+  code {
+    -webkit-user-select: all;
+    user-select: all;
+    display: block;
+    padding: 20px;
+    border: 2px dashed #c9baa7;
+    color: #31808c;
+    background-color: #f5f4ef;
+    text-align: left;
+    font-family: inherit;
+    overflow: auto;
+  }
+
+  code:focus {
+    border: 2px dashed #31808c;
+    outline: none;
+    animation: select 100ms step-end forwards;
+  }
+
+  @keyframes select {
+    to {
+      -webkit-user-select: text;
+      user-select: text;
+    }
+  }
+}
