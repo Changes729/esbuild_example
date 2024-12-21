@@ -16,6 +16,10 @@
   },
   "dependencies": {
     "@excalidraw/excalidraw": "^0.17.6",
+    "@milkdown/crepe": "^7.5.9",
+    "@milkdown/kit": "^7.5.9",
+    "@milkdown/react": "^7.5.9",
+    "@milkdown/theme-nord": "^7.5.9",
     "classnames": "^2.5.1",
     "electron-squirrel-startup": "^1.0.0",
     "esbuild-sass-plugin": "^3.3.1",

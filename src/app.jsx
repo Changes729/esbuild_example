@@ -13,6 +13,7 @@ import { default as SvgClick } from "./pages/svg-element-onclick";
 import { default as CssFocus } from "./pages/css-focus";
 import { default as CssShadowsShift } from "./pages/css-color-shadows";
 import { default as HolyGrailLayout } from "./pages/holy-grail-layout";
+import { default as Milkdown } from "./pages/milkdown-crepe";
 
 /* Private class function ----------------------------------------------------*/
 function Hello() {
@@ -35,6 +36,7 @@ function App() {
         <Route path="css-shadow-shift" element={<CssShadowsShift />} />
         <Route path="excalidraw-embed" element={<ExcalidrawEmbed />} />
         <Route path="markdown" element={<MarkdownExample />} />
+        <Route path="milkdown" element={<Milkdown />} />
         <Route
           path="pdf-dym"
           element={
