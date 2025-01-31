@@ -8,7 +8,7 @@ import { default as AspectBox } from "./pages/aspect-box";
 import { default as BurgerMenu } from "./pages/burger-menu";
 import { default as CssTimeline } from "./pages/css-timeline";
 import { default as ExcalidrawEmbed } from "./pages/excalidraw-embed/index";
-import { default as MarkdownExample } from "./pages/markedDoc";
+import { default as MarkdownExample } from "./pages/markdown";
 import { default as SvgClick } from "./pages/svg-element-onclick";
 import { default as CssFocus } from "./pages/css-focus";
 import { default as CssShadowsShift } from "./pages/css-color-shadows";

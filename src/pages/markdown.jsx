@@ -9,7 +9,6 @@ hello world! second line.
 
 what's next ?
 `);
-console.log(result);
 
 export default function () {
   // can use `require('markdown-it')` for CJS
