@@ -9,4 +9,5 @@ contextBridge.exposeInMainWorld("versions", {
 
 contextBridge.exposeInMainWorld("api", {
   hello: () => ipcRenderer.invoke("hello"),
+  getPosition: () => ipcRenderer.invoke("getPosition"),
 });

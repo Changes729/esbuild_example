@@ -1,16 +1,24 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("node:path");
 
-const createWindow = () => {
-  const win = new BrowserWindow({
-    width: 800,
-    height: 600,
-    webPreferences: {
-      preload: path.join(__dirname, "preload.js"),
-    },
-  });
+class MainWindow extends BrowserWindow {
+  constructor() {
+    super({
+      width: 800,
+      height: 600,
+      webPreferences: {
+        preload: path.join(__dirname, "preload.js"),
+      },
+    });
 
-  win.loadFile("dist/index.htm");
+    this.loadFile("dist/index.htm");
+  }
+}
+
+var win = null;
+
+const createWindow = () => {
+  win = new MainWindow();
 };
 
 app.on("window-all-closed", () => {
@@ -28,5 +36,10 @@ app.whenReady().then(() => {
   ipcMain.handle("hello", async () => {
     console.log("ipcMain.handle('hello')");
     return "world";
+  });
+
+  ipcMain.handle("getPosition", async () => {
+    console.log(win.getPosition());
+    return "pong";
   });
 });

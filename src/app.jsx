@@ -5,11 +5,15 @@ const app = document.getElementById("app");
 const root = ReactDOM.createRoot(app);
 
 const func = async () => {
-  const response = await window.api.hello()
-  console.log(response) // 打印 'pong'
-}
+  const response = await window.api.hello();
+  console.log(response); // 打印 'pong'
 
-func()
+  setInterval(() => {
+    window.api.getPosition();
+  }, 100);
+};
+
+func();
 
 root.render(
   <>
