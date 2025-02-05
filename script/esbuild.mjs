@@ -1,6 +1,6 @@
 import * as esbuild from "esbuild";
 import fs from "node:fs";
-import http from "node:http"
+import http from "node:http";
 import { sassPlugin } from "esbuild-sass-plugin";
 
 let PORT = 3000;
@@ -29,7 +29,14 @@ let ctx = await esbuild.context({
   bundle: true,
   minify: true,
   sourcemap: true,
-  loader: { ".htm": "file", ".svg": "text" },
+  loader: {
+    ".htm": "file",
+    ".svg": "text",
+    ".woff": "file",
+    ".woff2": "file",
+    ".ttf": "file",
+    ".eot": "file",
+  },
   outdir: `${OUT_DIR}`,
   define: {
     "process.env.NODE_ENV": '"production"',
