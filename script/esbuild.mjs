@@ -8,7 +8,7 @@ fs.rmSync(OUT_DIR, { recursive: true, force: true });
 fs.cpSync(HTML_DIR, OUT_DIR, {recursive: true});
 
 let ctx = await esbuild.context({
-  entryPoints: ["src/app.jsx"],
+  entryPoints: ["src/app.ts"],
   bundle: true,
   minify: true,
   sourcemap: true,
