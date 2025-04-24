@@ -14,6 +14,7 @@ import { default as CssFocus } from "./pages/css-focus";
 import { default as CssShadowsShift } from "./pages/css-color-shadows";
 import { default as HolyGrailLayout } from "./pages/holy-grail-layout";
 import { default as Milkdown } from "./pages/milkdown-crepe";
+import { default as P5 } from "./pages/p5";
 import FileSystemTest from "./pages/filesystem";
 
 /* Private class function ----------------------------------------------------*/
@@ -47,6 +48,7 @@ function App() {
         <Route path="svg-click" element={<SvgClick />} />
         <Route path="holy-grail-layout" element={<HolyGrailLayout />} />
         <Route path="file-system" element={<FileSystemTest />} />
+        <Route path="p5" element={<P5 />} />
       </Routes>
     </BrowserRouter>
   );
