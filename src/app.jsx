@@ -15,7 +15,9 @@ import { default as CssShadowsShift } from "./pages/css-color-shadows";
 import { default as HolyGrailLayout } from "./pages/holy-grail-layout";
 import { default as Milkdown } from "./pages/milkdown-crepe";
 import { default as P5 } from "./pages/p5";
+import { default as InfinityFlow } from "./pages/infinite-flow";
 import FileSystemTest from "./pages/filesystem";
+import { Excalidraw } from "@excalidraw/excalidraw";
 
 /* Private class function ----------------------------------------------------*/
 function Hello() {
@@ -36,7 +38,17 @@ function App() {
         <Route path="css-timeline" element={<CssTimeline />} />
         <Route path="css-focus" element={<CssFocus />} />
         <Route path="css-shadow-shift" element={<CssShadowsShift />} />
-        <Route path="excalidraw-embed" element={<ExcalidrawEmbed />} />
+        <Route
+          path="excalidraw-embed"
+          element={
+            <div className="excalidraw-embed">
+              <h1 style={{ textAlign: "center" }}>Excalidraw Example</h1>
+              <div style={{ height: "500px" }}>
+                <Excalidraw />
+              </div>
+            </div>
+          }
+        />
         <Route path="markdown" element={<MarkdownExample />} />
         <Route path="milkdown" element={<Milkdown />} />
         <Route
@@ -49,6 +61,7 @@ function App() {
         <Route path="holy-grail-layout" element={<HolyGrailLayout />} />
         <Route path="file-system" element={<FileSystemTest />} />
         <Route path="p5" element={<P5 />} />
+        <Route path="InfinityFlow" element={<InfinityFlow />} />
       </Routes>
     </BrowserRouter>
   );
