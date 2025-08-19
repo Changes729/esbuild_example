@@ -1,26 +1,17 @@
 /* Private include -----------------------------------------------------------*/
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router";
+import { useRoutes, useNavigate, HashRouter } from "react-router";
+import routes from "./base/router";
 import "@/app.scss";
 
 /* Private class function ----------------------------------------------------*/
-function LiangZhu_weekly(children) {
-  return <div>hello world</div>;
-}
-
 function App() {
   onload = () => {
     useNavigate()(document.location.pathname);
   };
 
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route index element={<LiangZhu_weekly />} />
-      </Routes>
-    </BrowserRouter>
-  );
+  return <div>{useRoutes(routes)}</div>;
 }
 
 /** Main Start */
@@ -32,8 +23,11 @@ window.onload = () => {
 
   document.title = "网易云音乐";
 
-
   let node = document.createElement("div");
   document.body.appendChild(node);
-  ReactDOM.createRoot(node).render(<App />);
+  ReactDOM.createRoot(node).render(
+    <HashRouter>
+      <App />
+    </HashRouter>
+  );
 };
