@@ -4,12 +4,12 @@ interface IProps {
   children?: React.ReactNode;
 }
 
-const HomeView: React.FC<IProps> = ({ props }) => {
+const RecommendView: React.FC<IProps> = ({ props }) => {
   return (
     <div>
-      <h2>HomeView</h2>
+      <h2>RecommendView</h2>
     </div>
   );
 };
 
-export default HomeView;
+export default RecommendView;
