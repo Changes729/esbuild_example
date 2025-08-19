@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".", // Important for resolving paths relative to the tsconfig.json location
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "jsx": "react",
+  }
+}

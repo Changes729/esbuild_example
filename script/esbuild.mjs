@@ -2,7 +2,7 @@ import * as esbuild from "esbuild";
 import fs from "node:fs";
 import http from "node:http";
 import { sassPlugin } from "esbuild-sass-plugin";
-import aliasPlugin from "./aliasPlugin.mjs";
+import alias from "esbuild-plugin-alias";
 
 let PORT = 3000;
 const APP_DIR = "src/";
@@ -36,8 +36,8 @@ let ctx = await esbuild.context({
   },
   plugins: [
     sassPlugin(),
-    aliasPlugin({
-      '@': '.',
+    alias({
+      "@": "src/",
     }),
   ],
 });
