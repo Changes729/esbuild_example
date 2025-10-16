@@ -20,6 +20,10 @@
     "@milkdown/kit": "^7.5.9",
     "@milkdown/react": "^7.5.9",
     "@milkdown/theme-nord": "^7.5.9",
+    "@tiptap/extension-text-style": "^3.6.6",
+    "@tiptap/react": "^3.6.6",
+    "@tiptap/starter-kit": "^3.13.0",
+    "@types/react": "^19.2.7",
     "classnames": "^2.5.1",
     "electron-squirrel-startup": "^1.0.0",
     "esbuild-sass-plugin": "^3.3.1",
@@ -28,11 +32,27 @@
     "marked": "^15.0.4",
     "nanoid": "^5.0.7",
     "p5": "^1.11.3",
-    "react": "^19.1.0",
+    "postcss-modules": "^6.0.1",
+    "prosemirror-commands": "^1.7.1",
+    "prosemirror-dropcursor": "^1.8.2",
+    "prosemirror-example-setup": "^1.2.3",
+    "prosemirror-gapcursor": "^1.4.0",
+    "prosemirror-history": "^1.5.0",
+    "prosemirror-keymap": "^1.2.3",
+    "prosemirror-markdown": "^1.13.2",
+    "prosemirror-menu": "^1.2.5",
+    "prosemirror-model": "^1.25.3",
+    "prosemirror-schema-basic": "^1.2.4",
+    "prosemirror-schema-list": "^1.5.1",
+    "prosemirror-state": "^1.4.3",
+    "prosemirror-view": "^1.41.3",
+    "react": "^19.2.3",
     "react-burger-menu": "^3.1.0",
-    "react-dom": "^19.1.0",
+    "react-dom": "^19.2.3",
     "react-router": "^7.5.3",
+    "rich-markdown-editor": "^11.21.3",
     "sass": "^1.80.3",
+    "test-module": "link:/home/asuki/Downloads/test-module/",
     "three": "^0.165.0"
   },
   "scripts": {
@@ -40,5 +60,9 @@
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make"
+  },
+  "peerDependencies": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
   }
 }

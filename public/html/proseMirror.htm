@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>My first three.js app</title>
+    <style>
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="module" src="./app-proseMirror.js"></script>
+    <link href="app-proseMirror.css" rel="stylesheet" />
+    <div id="editor" style="margin-bottom: 0px"></div>
+    <div style="text-align: center">
+      <label style="border-right: 1px solid silver"
+        ><font __transmart="">Markdown</font
+        ><input
+          type="radio"
+          name="inputformat"
+          value="markdown"
+          checked=""
+        />&nbsp;</label
+      >
+      <label
+        >&nbsp;<input
+          type="radio"
+          name="inputformat"
+          value="prosemirror"
+        /><font __transmart="SOURCE">WYSIWYM</font
+        ><font
+          __transmart="TARGET"
+          class="transmart-tgt-font transmart-tgt-font-container transmart-tgt-font-active"
+          >所见即所得</font
+        ></label
+      >
+    </div>
+    <div style="display: none">
+      <textarea id="content">
+This is a comment written in [Markdown](http://commonmark.org). *You* may know the syntax for inserting a link, but does your whole audience?
+
+So you can give people the **choice** to use a more familiar, discoverable interface.</textarea
+      >
+    </div>
+  </body>
+</html>

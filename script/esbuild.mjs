@@ -1,7 +1,7 @@
 import * as esbuild from "esbuild";
 import fs from "node:fs";
 import http from "node:http";
-import { sassPlugin } from "esbuild-sass-plugin";
+import { sassPlugin, postcssModules } from "esbuild-sass-plugin";
 
 let PORT = 3000;
 const APP_DIR = "src/";
@@ -42,7 +42,22 @@ let ctx = await esbuild.context({
     "process.env.NODE_ENV": '"production"',
     "process.env.IS_PREACT": '"true"',
   },
-  plugins: [sassPlugin()],
+  jsx: "automatic",
+  plugins: [
+    sassPlugin({
+      filter: /\.module\.scss$/,
+      transform: postcssModules({
+        generateScopedName: "[local]",
+        // plugins: [autoprefixer],
+      }),
+    }),
+    sassPlugin({
+      filter: /\.scss$/,
+    }),
+  ],
+  alias: {
+    'react': 'react',
+  },
 });
 
 let { host, port } = await ctx.serve({

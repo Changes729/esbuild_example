@@ -16,8 +16,10 @@ import { default as HolyGrailLayout } from "./pages/holy-grail-layout";
 import { default as Milkdown } from "./pages/milkdown-crepe";
 import { default as P5 } from "./pages/p5";
 import { default as InfinityFlow } from "./pages/infinite-flow";
+import { default as TipTapEditor } from "./pages/tiptap";
 import FileSystemTest from "./pages/filesystem";
 import { Excalidraw } from "@excalidraw/excalidraw";
+import { TestElement } from "test-module";
 
 /* Private class function ----------------------------------------------------*/
 function Hello() {
@@ -34,6 +36,7 @@ function App() {
       <Routes>
         <Route index element={<Hello />} />
         <Route path="aspect-box" element={<AspectBox />} />
+        <Route path="tiptap" element={<TipTapEditor />} />
         <Route path="burger-menu" element={<BurgerMenu />} />
         <Route path="css-timeline" element={<CssTimeline />} />
         <Route path="css-focus" element={<CssFocus />} />
@@ -62,6 +65,7 @@ function App() {
         <Route path="file-system" element={<FileSystemTest />} />
         <Route path="p5" element={<P5 />} />
         <Route path="InfinityFlow" element={<InfinityFlow />} />
+        <Route path="test-outside" element={<TestElement />} />
       </Routes>
     </BrowserRouter>
   );
