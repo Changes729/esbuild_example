@@ -4,10 +4,30 @@
   "main": "electron/main.js",
   "license": "MIT",
   "devDependencies": {
-    "esbuild": "^0.20.1"
+    "@reduxjs/toolkit": "^2.12.0",
+    "normalize.css": "^8.0.1",
+    "react": "^19.2.6",
+    "react-blurhash": "^0.3.0",
+    "react-dom": "^19.2.6",
+    "react-images": "1.2.0-beta.7",
+    "react-redux": "^9.3.0",
+    "react-router": "^7.15.1"
   },
   "dependencies": {
-    "uuid": "^11.1.0"
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.5.0",
+    "esbuild": "^0.28.0",
+    "esbuild-plugin-alias": "^0.2.1",
+    "esbuild-plugin-path-alias": "^1.0.7",
+    "esbuild-plugin-tsconfig-paths": "^1.0.2",
+    "esbuild-sass-plugin": "^3.7.0",
+    "postcss": "^8.5.15",
+    "postcss-modules": "^6.0.1",
+    "sass": "^1.99.0",
+    "sass-embedded": "^1.99.0",
+    "typescript": "^6.0.3",
+    "typescript-plugin-css-modules": "^5.2.0"
   },
   "scripts": {
     "build": "node script/esbuild.mjs"
