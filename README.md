@@ -1,31 +1,11 @@
-{
-  "compilerOptions": {
-    "noImplicitAny": true,
-    "plugins": [
-      {
-        "name": "typescript-plugin-css-modules"
-      }
-    ],
-    "target": "ES2022",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  }
-}
+# esbuild_example
+
+## Chinese Users
+
+``` sh
+# install cnpm
+npm install cnpm -g  --registry=https://registry.npm.taobao.org
+
+cnpm install --save-dev @electron-forge/cli
+cnpm exec --package=@electron-forge/cli -c "electron-forge import"
+```
