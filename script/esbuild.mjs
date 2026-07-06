@@ -17,11 +17,16 @@ fs.readdirSync(APP_DIR).forEach((file) => {
   if (/^(app)+\.(jsx|tsx|js|ts)$/.test(file)) {
     app_list.push(APP_DIR + file);
   }
+  if (/^(index)+\.(jsx|tsx|js|ts)$/.test(file)) {
+    app_list.push(APP_DIR + file);
+  }
 });
 
 let ctx = await esbuild.context({
   entryPoints: app_list,
   bundle: true,
+  format: "esm",
+  external: ["/app.js"],
   minify: true,
   sourcemap: true,
   loader: {
@@ -62,7 +67,7 @@ console.log(`[serve] listening at http://localhost:${port}`);
 http
   .createServer((req, res) => {
     const options = {
-      hostname: host,
+      hostname: hosts,
       port: 0,
       path: req.url,
       method: req.method,

@@ -1,16 +1,5 @@
-import React, { Suspense } from "react";
-import ReactDOM from "react-dom/client";
+import "./app.scss";
 
-function App() {
-  return <></>;
+export default function App() {
+  return <div>Hello World 32</div>;
 }
-
-window.onload = () => {
-  console.log("[alluvial] App starting...");
-  document.title = "Alluvial";
-
-  const node = document.createElement("div");
-  document.body.appendChild(node);
-
-  ReactDOM.createRoot(node).render(<App />);
-};
