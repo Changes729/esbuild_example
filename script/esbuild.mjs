@@ -31,6 +31,7 @@ let ctx = await esbuild.context({
     ".woff2": "file",
     ".ttf": "file",
     ".woff": "file",
+    ".glb": "file",
   },
   outdir: `${OUT_DIR}`,
   define: {
